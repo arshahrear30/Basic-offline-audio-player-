@@ -47,27 +47,14 @@ public class MainActivity extends AppCompatActivity {
         buttons1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mediaPlayer == null) {
+
+                if (mediaPlayer != null)mediaPlayer.release(); //best use for audio
                     mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mulk);
-                }
-                mediaPlayer.start();
+                    mediaPlayer.start();
             }
         });
 
 //////////////////////////////////////////////////
-
-        buttons2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mediaPlayer == null) {
-                    mediaPlayer = MediaPlayer.create(MainActivity.this, R.raw.mulk);
-                }
-                mediaPlayer.start();
-            }
-        });
-
-////////////////////////////////////////////////////
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
