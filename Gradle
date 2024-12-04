@@ -1,0 +1,13 @@
+settings.gradle (Project Settings)::
+mavenCentral()
+gradlePluginPortal()
+maven {url "https://jitpack.io"}
+google()
+mavenCentral()
+maven {url "https://jitpack.io"}
+
+
+build.gradle (Module :app) ::
+implementation 'com.github.fornewid:neumorphism:0.3.2'
+or,
+implementation("com.github.fornewid:neumorphism:0.3.2")
